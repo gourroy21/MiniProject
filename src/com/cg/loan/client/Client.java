@@ -10,8 +10,7 @@ public class Client {
 		while(true)
 		{
 			
-			System.out.println("*****************************"
-					+ "\nLOAN APPLICATION"
+			System.out.println("\nLOAN APPLICATION"
 					+ "\n******************************"
 					+ "\n\n1: Apply For Loan"
 					+ "\n2:Login"
