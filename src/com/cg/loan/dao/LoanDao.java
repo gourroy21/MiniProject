@@ -1,5 +1,55 @@
 package com.cg.loan.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+
+import com.cg.loan.bean.LoanProgramBean;
+import com.cg.loan.exception.LoanException;
+import com.cg.loan.util.DBUtil;
+
 public class LoanDao implements ILoanDao{
+	 Connection con=null;
+	 private static Logger logger=Logger.getRootLogger();
+	 
+	@Override
+	public ArrayList<LoanProgramBean> displayLoanProgram() throws LoanException {
+		con=DBUtil.getConnection();
+		PreparedStatement ps = null;
+		ResultSet rs=null;
+		ArrayList<LoanProgramBean> al=new ArrayList<LoanProgramBean>();
+		
+		PropertyConfigurator.configure("resources//log4j.properties");
+		try {
+			ps=con.prepareStatement(QueryMapper.SELECT_QUERY);
+			
+			rs= ps.executeQuery();
+			
+			while(rs.next())
+				{
+					LoanProgramBean l=new LoanProgramBean();
+					l.setProgramName(rs.getString(1));
+					l.setDescription(rs.getString(2));
+					l.setType(rs.getString(3));
+					l.setDurationOfYears(rs.getInt(4));
+					l.setMinLoanAmount(rs.getDouble(5));
+					l.setMaxLoanAmount(rs.getDouble(6));
+					l.setRateOfInterest(rs.getDouble(7));
+					l.setProofsRequired(rs.getString(8));
+					al.add(l);
+				}
+			
+		} catch (SQLException exe) {
+			logger.error("Fetching of Loan Programs unsuccessful!"+exe);
+			throw new LoanException("Fetching of Loan Programs unsuccessful!");
+		}
+		return al;
+	}
 
 }

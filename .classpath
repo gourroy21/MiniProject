@@ -2,5 +2,9 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_25"/>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="resources"/>
+	<classpathentry kind="lib" path="D:/Users/nehnaik/Desktop/jar files/junit-4.6.jar"/>
+	<classpathentry kind="lib" path="D:/Users/nehnaik/Desktop/jar files/log4j-1.2.9.jar"/>
+	<classpathentry kind="lib" path="D:/Users/nehnaik/Desktop/jar files/ojdbc6_g.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
