@@ -48,7 +48,7 @@ public class Client {
 					v1=service.isValid(cust);
 					if(v1)
 					{
-						getApplicationDetails();
+						getApplicationDetails(a.get(option-1).getProgramName());
 					}
 				} catch (LoanException ex) {
 					// TODO Auto-generated catch block
@@ -87,8 +87,9 @@ public class Client {
 		cust.setEmailId(sc.next());
 	}
 	
-	public static void getApplicationDetails()
+	public static void getApplicationDetails(String loanProgram)
 	{
+		app.setLoanProgram(loanProgram);
 		
 		System.out.println("Enter name:");
 		cust.setCustomerName(sc.next());

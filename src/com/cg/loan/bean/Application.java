@@ -6,7 +6,7 @@ public class Application {
 	private int appId;
 	private Date appDate;
 	private String loanProgram;
-	private int amountOfNumber;
+	private int amountOfLoan;
 	private String addressOfProperty;
 	private int annualFamilyIncome;
 	private String documentsProofAvailable;
@@ -42,11 +42,11 @@ public class Application {
 	public void setLoanProgram(String loanProgram) {
 		this.loanProgram = loanProgram;
 	}
-	public int getAmountOfNumber() {
-		return amountOfNumber;
+	public int getAmountOfLoan() {
+		return amountOfLoan;
 	}
-	public void setAmountOfNumber(int amountOfNumber) {
-		this.amountOfNumber = amountOfNumber;
+	public void setAmountOfNumber(int amountOfLoan) {
+		this.amountOfLoan = amountOfLoan;
 	}
 	public String getAddressOfProperty() {
 		return addressOfProperty;
@@ -96,7 +96,7 @@ public class Application {
 	@Override
 	public String toString() {
 		return "Application [appId=" + appId + ", appDate=" + appDate + ", loanProgram=" + loanProgram
-				+ ", amountOfNumber=" + amountOfNumber + ", addressOfProperty=" + addressOfProperty
+				+ ", amountOfLoan=" + amountOfLoan + ", addressOfProperty=" + addressOfProperty
 				+ ", annualFamilyIncome=" + annualFamilyIncome + ", documentsProofAvailable=" + documentsProofAvailable
 				+ ", guarenteeCover=" + guarenteeCover + ", marketValueOfGurarntee=" + marketValueOfGurarntee
 				+ ", status=" + status + ", dateOfInterview=" + dateOfInterview + "]";
