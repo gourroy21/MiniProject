@@ -1,6 +1,6 @@
 package com.cg.loan.service;
 
-<<<<<<< HEAD
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -56,19 +56,12 @@ public class LoanService implements ILoanService{
 		{
 			throw new LoanException("Enter valid email");
 		}
-		/*Pattern status=Pattern.compile("married,single");
-		Matcher mstatus=status.matcher(cust.getMaritalStatus());
-		if(!mstatus.matches())
-		{
-			throw new LoanException("Phone number must only contain numbers");
-		}*/
+		
 		if(!(cust.getMaritalStatus().equals("married") || cust.getMaritalStatus().equals("single")))
 		{
 			throw new LoanException("Enter valid marital status");
 		}
-		/*DateTimeFormatter f=DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		LocalDate d=LocalDate.parse(cust.getDateOfBirth(),f);
-		*/
+		
 		SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
 		sdf.setLenient(false);
 		  try {
@@ -176,21 +169,9 @@ public class LoanService implements ILoanService{
 		
 		return dao.updateLoan(loan);
 	}
-=======
-import java.util.ArrayList;
-
-import com.cg.loan.bean.Application;
-import com.cg.loan.bean.Users;
-import com.cg.loan.dao.ILoanDao;
-import com.cg.loan.dao.LoanDao;
-
-public class LoanService implements ILoanService{
-	ILoanDao dao;
 	
-	public LoanService() {
-		dao=new LoanDao();
-	}
-
+	
+	
 	@Override
 	public boolean validateUser(Users user) {
 		
@@ -208,7 +189,5 @@ public class LoanService implements ILoanService{
 		// TODO Auto-generated method stub
 		return dao.updateStatus(id,status);
 	}
-	
->>>>>>> eddb28e9aefda37c2842440210897810564d625f
 
 }
