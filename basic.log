@@ -1,0 +1,13 @@
+2018-08-06-main-ERROR-root      :Fetching of Loan Programs unsuccessful!java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist
+
+2018-08-06-main-ERROR-root      :Fetching of Loan Programs unsuccessful!java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist
+
+2018-08-06-main-INFO -root      :2 rows inserted
+2018-08-06-main-INFO -root      :Loan Program details added successfully
+2018-08-06-main-INFO -root      :2 rows inserted
+2018-08-06-main-INFO -root      :Loan Program details added successfully
+2018-08-06-main-ERROR-root      :Insertion failed
+2018-08-06-main-INFO -root      :1 rows inserted
+2018-08-06-main-INFO -root      :Loan Program details added successfully
+2018-08-06-main-INFO -root      :1 rows inserted
+2018-08-06-main-INFO -root      :Loan Program details added successfully
