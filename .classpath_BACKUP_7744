@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+<<<<<<< HEAD
+	<classpathentry kind="src" path="resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_25"/>
+	<classpathentry kind="lib" path="D:/Users/kacherup/Desktop/junit-4.6.jar"/>
+	<classpathentry kind="lib" path="D:/Users/kacherup/Desktop/ojdbc6_g.jar"/>
+	<classpathentry kind="lib" path="D:/Users/kacherup/Desktop/214/Module 2-SampleCode/Module 2-SampleCode/DonorApplicationReview/lib/log4j-1.2.9.jar"/>
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_25"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="D:/Users/anudredd/Desktop/MODULE-2/Module 4-SampleCode/TrustApplication/WebContent/WEB-INF/lib/ojdbc6.jar"/>
+>>>>>>> eddb28e9aefda37c2842440210897810564d625f
+	<classpathentry kind="output" path="bin"/>
+</classpath>
