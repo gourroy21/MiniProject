@@ -4,43 +4,42 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import com.cg.loan.bean.Application;
-<<<<<<< HEAD
+
 import com.cg.loan.bean.Customer;
 import com.cg.loan.bean.LoanProgramBean;
 import com.cg.loan.bean.Users;
 import com.cg.loan.exception.LoanException;
-=======
+
 import com.cg.loan.bean.Users;
->>>>>>> eddb28e9aefda37c2842440210897810564d625f
+
 import com.cg.loan.service.ILoanService;
 import com.cg.loan.service.LoanService;
 
 public class Client {
-<<<<<<< HEAD
+
 	static Scanner sc= new Scanner(System.in);
 	static Customer cust=new Customer();
 	static Application app=new Application();
 	static LoanProgramBean lb=new LoanProgramBean();
-	
-	public static void main(String[] args) {
-		int opt;
-		boolean v1;
-		Users user;
-		ILoanService service=new LoanService();
-		int loginflag=0;
-=======
-	
 	static Application app;
 	static ILoanService service;
 	static Scanner sc;
+	
+	
+		
+
+	
+	
 
 	public static void main(String[] args) {
 		int opt;
 		Users user;
-		
+		boolean v1;
+		ILoanService service=new LoanService();
+		int loginflag=0;
 		sc= new Scanner(System.in);
 		
->>>>>>> eddb28e9aefda37c2842440210897810564d625f
+
 		while(true)
 		{
 			
@@ -49,17 +48,12 @@ public class Client {
 					+ "\n******************************"
 					+ "\n\n1: Apply For Loan"
 					+ "\n2:Login"
-<<<<<<< HEAD
 					+ "\n3:View Loan Application status.");
-=======
-					+ "\n3:View Loan Application status."
 					+ "\n4:Exit");
->>>>>>> eddb28e9aefda37c2842440210897810564d625f
 			opt=sc.nextInt();
 			switch(opt)
 			{
 			case 1:
-<<<<<<< HEAD
 				try {
 					
 					ArrayList<LoanProgramBean> a=service.displayLoanProgram();
@@ -82,55 +76,19 @@ public class Client {
 					// TODO Auto-generated catch block
 					System.out.println(ex.getMessage());
 				}
-=======
+
 				applyLoan();
->>>>>>> eddb28e9aefda37c2842440210897810564d625f
 				break;
 			case 2:
 				int opt1;
 				System.out.println("Please Choose your Role :\n1)Loan Application Deparment\n2)Admin");
 				opt1=sc.nextInt();
-<<<<<<< HEAD
 				user=new Users();
 				service=new LoanService();
-				
 				switch(opt1) {
 					case 1:
-						user.setRole("lad");
-						System.out.println("Enter User Name :");
-						user.setName(sc.next());
-						System.out.println("Enter Password :");
-						user.setPassword(sc.next());
-						/*boolean valid=service.validateUser(user);
-						if(valid) {
-							int opt2;
-					
-							System.out.println("Choose type of Loan Program");
-							System.out.println("\n1)Loan For Purchase"
-									+ "\n2)Loan For Construction"
-									+ "\n3)Loan For Extension"
-									+ "\n4)Loan For Renovation");
-							opt2=sc.nextInt();
-					
-							switch(opt2) {
-								case 1:
-									LAD("purchase");
-									break;	
-								case 2:
-									LAD("Construction");
-									break;
-								case 3:
-									LAD("Extension");
-									break;
-								case 4:
-									LAD("Rennovation");
-									break;
-								}
-							}
-						else {
-							System.out.println("Invalid Credentials Please Try Again");
-						}
-						break;*/
+						LoginLad();
+						break;
 					case 2:
 						user.setRole("admin");
 						System.out.println("Enter User Name :");
@@ -217,36 +175,16 @@ public class Client {
 				break;
 			case 3:
 				break;
-				default:
-					
-				
-				
-=======
-				
-				switch(opt1) {
-				case 1:
-					LoginLad();
-					break;
-				case 2:
-					break;
-				default :
-					break;
-				}
-				break;
-			case 3:
-				break;
 			case 4:
 				System.exit(0);
 				break;
 				default:
-						
->>>>>>> eddb28e9aefda37c2842440210897810564d625f
+			
 			}
 				
 		}
 	}
 
-<<<<<<< HEAD
 	public static void getCustomerDetails()
 	{
 		
@@ -313,11 +251,11 @@ public class Client {
 }
 	
 
-=======
 	public static void applyLoan()
 	{
 		
 	}
+
 	public static void LAD(String type) {
 		sc= new Scanner(System.in);
 		app=new Application();
@@ -406,4 +344,3 @@ public static void LoginLad()
 	}
 }
 }
->>>>>>> eddb28e9aefda37c2842440210897810564d625f
