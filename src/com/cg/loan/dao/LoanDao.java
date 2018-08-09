@@ -1,23 +1,17 @@
 package com.cg.loan.dao;
 
-<<<<<<< HEAD
-=======
 import com.cg.loan.bean.Application;
 import com.cg.loan.bean.Users;
 import com.cg.loan.util.DBUtil;
-
->>>>>>> eddb28e9aefda37c2842440210897810564d625f
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-<<<<<<< HEAD
 import java.sql.Statement;
 import java.util.ArrayList;
-
+import java.util.List;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-
 import com.cg.loan.bean.Application;
 import com.cg.loan.bean.LoanProgramBean;
 import com.cg.loan.bean.Users;
@@ -28,6 +22,8 @@ public class LoanDao implements ILoanDao{
 	 Connection con=DBUtil.getConnection();
 	 PreparedStatement ps = null;
 	 private static Logger logger=Logger.getRootLogger();
+	private PreparedStatement preparedStatement;
+	
 	 
 	@Override
 	public ArrayList<LoanProgramBean> displayLoanProgram() throws LoanException {
@@ -72,18 +68,21 @@ public class LoanDao implements ILoanDao{
 			ps.setString(2, user.getPassword());
 			ps.setString(3, user.getRole());
 			ResultSet rs=ps.executeQuery();
-=======
-import java.util.ArrayList;
-import java.util.List;
-
-
-public class LoanDao implements ILoanDao{
-	private Connection con;
-	private PreparedStatement preparedStatement;
-	
-	public LoanDao() {
-		con=DBUtil.getConnection();
+			if(rs.next()) 
+			{
+				return true;
+			}
+		}
+		catch(Exception ex){
+			System.err.println(ex.getMessage());
+		}
+		return false;
 	}
+
+
+	
+	
+	
 
 	@Override
 	public boolean validateUser(Users user) {
@@ -95,25 +94,23 @@ public class LoanDao implements ILoanDao{
 			preparedStatement.setString(2, user.getPassword());
 			preparedStatement.setString(3, user.getRole());
 			ResultSet rs=preparedStatement.executeQuery();
->>>>>>> eddb28e9aefda37c2842440210897810564d625f
+
 			if(rs.next()) 
 			{
 				return true;
 			}
 		}
-<<<<<<< HEAD
+
 		catch(Exception ex){
 			System.err.println(ex.getMessage());
-=======
+
 		catch(Exception e){
 			System.err.println(e.getMessage());
->>>>>>> eddb28e9aefda37c2842440210897810564d625f
 		}
 		return false;
 	}
 
 	@Override
-<<<<<<< HEAD
 	public ArrayList<Application> viewApplications() throws LoanException {
 		ResultSet rs=null;
 		ArrayList<Application> t=new ArrayList<>();
@@ -278,7 +275,6 @@ public class LoanDao implements ILoanDao{
 	}
 
 }
-=======
 	public ArrayList<Application> getLoanDetails(String loanProgram) {
 		ArrayList<Application> list=new ArrayList<>();
 		Application app;
@@ -356,4 +352,3 @@ public class LoanDao implements ILoanDao{
 		
  }
 	}
->>>>>>> eddb28e9aefda37c2842440210897810564d625f
