@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.cg.loan.bean.Application;
 import com.cg.loan.bean.Customer;
 import com.cg.loan.bean.LoanProgramBean;
 import com.cg.loan.dao.ILoanDao;
@@ -83,6 +84,53 @@ public class LoanService implements ILoanService{
 	public ArrayList<LoanProgramBean> displayLoanProgram() throws LoanException {
 		
 		return dao.displayLoanProgram();
+	}
+
+	@Override
+	public boolean isValidApplication(Application app,Double min, Double max) throws LoanException {
+		
+		Pattern income=Pattern.compile("^[1-9][0-9]+$");
+		Matcher mincome=income.matcher(Integer.toString(app.getAnnualFamilyIncome()));
+		if(!mincome.matches())
+		{
+			throw new LoanException("Enter valid Income: must only be digits");
+		}
+		else
+		{
+			if (app.getAmountOfLoan() < min)
+				throw new LoanException("Amount must be greater than "+min);
+			else if (app.getAmountOfLoan() > max)
+				throw new LoanException("Amount must be less than "+max);
+		}
+		
+		Pattern doc=Pattern.compile("^[a-zA-Z,]+$");
+		Matcher mdoc=doc.matcher(app.getDocumentsProofAvailable());
+		if(!mdoc.matches())
+		{
+			throw new LoanException("Documents must contain only alphabets");
+		}
+		
+		Pattern guarentee=Pattern.compile("^[a-zA-Z]+$");
+		Matcher mguarentee=guarentee.matcher(app.getGuarenteeCover());
+		if(!mguarentee.matches())
+		{
+			throw new LoanException("Guarentee Cover must contain only alphabets");
+		}
+		
+		Pattern value=Pattern.compile("^[1-9][0-9]+$");
+		Matcher mvalue=value.matcher(app.getMarketValueOfGurarntee());
+		if(!mvalue.matches())
+		{
+			throw new LoanException("Enter valid Market Value: must only be digits");
+		}
+		
+		return true;
+	}
+
+	@Override
+	public int addClientDetails(Application app) throws LoanException {
+		
+		return dao.addClientDetails(app);
 	}
 
 }

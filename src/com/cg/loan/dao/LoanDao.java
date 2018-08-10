@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
+import com.cg.loan.bean.Application;
 import com.cg.loan.bean.LoanProgramBean;
 import com.cg.loan.exception.LoanException;
 import com.cg.loan.util.DBUtil;
@@ -17,6 +18,10 @@ import com.cg.loan.util.DBUtil;
 public class LoanDao implements ILoanDao{
 	 Connection con=null;
 	 private static Logger logger=Logger.getRootLogger();
+	
+	 public LoanDao() {
+		 PropertyConfigurator.configure("resources//log4j.properties");
+	}
 	 
 	@Override
 	public ArrayList<LoanProgramBean> displayLoanProgram() throws LoanException {
@@ -25,7 +30,7 @@ public class LoanDao implements ILoanDao{
 		ResultSet rs=null;
 		ArrayList<LoanProgramBean> al=new ArrayList<LoanProgramBean>();
 		
-		PropertyConfigurator.configure("resources//log4j.properties");
+		//PropertyConfigurator.configure("resources//log4j.properties");
 		try {
 			ps=con.prepareStatement(QueryMapper.SELECT_QUERY);
 			
@@ -50,6 +55,49 @@ public class LoanDao implements ILoanDao{
 			throw new LoanException("Fetching of Loan Programs unsuccessful!");
 		}
 		return al;
+	}
+
+	@Override
+	public int addClientDetails(Application app) throws LoanException {
+		
+		con=DBUtil.getConnection();
+		
+		if(con == null) {
+			logger.fatal("Connection failed");
+			throw new LoanException("DataBase connection failed");
+			
+			}
+			int cid = 0;
+			
+			try {	
+			
+				PreparedStatement ps = con.prepareStatement(QueryMapper.INSERT_QUERY);	
+			
+				System.out.println("Check control 1");
+				
+					
+				
+
+
+				
+				
+			} catch (SQLException e) {
+			
+				logger.error("exception occured", e);
+				throw new LoanException("Wrong Info");
+				
+			}
+			finally {
+				if(con!= null)
+					try {
+						con.close();
+						} 
+				catch (SQLException e) {
+					logger.error("Please Check Connection", e);
+					throw new LoanException("Connection Problem Occured");
+					}
+				}
+			return cid;
 	}
 
 }
