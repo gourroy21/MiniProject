@@ -11,6 +11,7 @@ public interface ILoanDao {
 
 
 	public ArrayList<LoanProgramBean> displayLoanProgram() throws LoanException;
+<<<<<<< HEAD
 	public boolean validateAdmin(Users user) throws LoanException;
 	public ArrayList<Application> viewApplications() throws LoanException;
 	public boolean deleteLoanProgram(String LoanType) throws LoanException;
@@ -20,4 +21,7 @@ public interface ILoanDao {
 	public boolean validateUser(Users user);
 	public ArrayList<Application> getLoanDetails(String loanProgram);
 	public Application updateStatus(int id,String status);
+=======
+	int addClientDetails(Application app) throws LoanException;
+>>>>>>> application
 }

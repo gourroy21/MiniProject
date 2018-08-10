@@ -2,9 +2,16 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="resources"/>
+<<<<<<< HEAD:.classpath_LOCAL_7744
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_25"/>
 	<classpathentry kind="lib" path="D:/Users/kacherup/Desktop/junit-4.6.jar"/>
 	<classpathentry kind="lib" path="D:/Users/kacherup/Desktop/ojdbc6_g.jar"/>
 	<classpathentry kind="lib" path="D:/Users/kacherup/Desktop/214/Module 2-SampleCode/Module 2-SampleCode/DonorApplicationReview/lib/log4j-1.2.9.jar"/>
+=======
+	<classpathentry kind="lib" path="D:/Users/tsanzgir/Desktop/Materials/junit-4.6.jar"/>
+	<classpathentry kind="lib" path="D:/Users/tsanzgir/Desktop/Materials/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="D:/Users/tsanzgir/Desktop/Materials/ojdbc6_g.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_25"/>
+>>>>>>> application:.classpath
 	<classpathentry kind="output" path="bin"/>
 </classpath>

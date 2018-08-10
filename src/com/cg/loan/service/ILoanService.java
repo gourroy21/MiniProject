@@ -2,6 +2,10 @@ package com.cg.loan.service;
 
 import java.util.ArrayList;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> application
 import com.cg.loan.bean.Application;
 import com.cg.loan.bean.Customer;
 import com.cg.loan.bean.LoanProgramBean;
@@ -12,6 +16,7 @@ public interface ILoanService {
 
 	public ArrayList<LoanProgramBean> displayLoanProgram() throws LoanException;
 	public boolean isValid(Customer cust) throws LoanException;
+<<<<<<< HEAD
 	public boolean isValidLoanProgram(LoanProgramBean loan) throws LoanException;
 	public boolean validateAdmin(Users user) throws LoanException;
 	public ArrayList<Application> viewApplications() throws LoanException;
@@ -25,4 +30,8 @@ public interface ILoanService {
 
 	public Application updateStatus(int id,String status);
 
+=======
+	public boolean isValidApplication(Application app, Double min, Double max) throws LoanException;
+	int addClientDetails(Application app) throws LoanException;
+>>>>>>> application
 }

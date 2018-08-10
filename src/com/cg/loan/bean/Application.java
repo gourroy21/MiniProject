@@ -1,6 +1,6 @@
 package com.cg.loan.bean;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Application {
 	private int appId;
@@ -11,9 +11,9 @@ public class Application {
 	private int annualFamilyIncome;
 	private String documentsProofAvailable;
 	private String guarenteeCover;
-	private int marketValueOfGurarntee;
+	private String marketValueOfGurarntee;
 	private String status;
-	private Date dateOfInterview;
+	private String dateOfInterview;
 	
 	
 	
@@ -30,12 +30,20 @@ public class Application {
 	public void setAppId(int appId) {
 		this.appId = appId;
 	}
+	
+
+
 	public Date getAppDate() {
 		return appDate;
 	}
+
+
 	public void setAppDate(Date appDate) {
 		this.appDate = appDate;
 	}
+
+
+
 	public String getLoanProgram() {
 		return loanProgram;
 	}
@@ -45,9 +53,16 @@ public class Application {
 	public int getAmountOfNumber() {
 		return amountOfNumber;
 	}
+<<<<<<< HEAD
 	public void setAmountOfNumber(int amountOfNumber) {
 		this.amountOfNumber = amountOfNumber;
+=======
+	
+	public void setAmountOfLoan(int amountOfLoan) {
+		this.amountOfLoan = amountOfLoan;
+>>>>>>> application
 	}
+
 	public String getAddressOfProperty() {
 		return addressOfProperty;
 	}
@@ -72,27 +87,40 @@ public class Application {
 	public void setGuarenteeCover(String guarenteeCover) {
 		this.guarenteeCover = guarenteeCover;
 	}
-	public int getMarketValueOfGurarntee() {
+	
+	public String getMarketValueOfGurarntee() {
 		return marketValueOfGurarntee;
 	}
-	public void setMarketValueOfGurarntee(int marketValueOfGurarntee) {
+
+
+
+	public void setMarketValueOfGurarntee(String marketValueOfGurarntee) {
 		this.marketValueOfGurarntee = marketValueOfGurarntee;
 	}
+
+
+
 	public String getStatus() {
 		return status;
 	}
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public Date getDateOfInterview() {
+
+
+
+	public String getDateOfInterview() {
 		return dateOfInterview;
 	}
-	public void setDateOfInterview(Date dateOfInterview) {
+
+
+
+	public void setDateOfInterview(String dateOfInterview) {
 		this.dateOfInterview = dateOfInterview;
 	}
-	
-	
-	
+
+
+
 	@Override
 	public String toString() {
 		return "Application [appId=" + appId + ", appDate=" + appDate + ", loanProgram=" + loanProgram
@@ -101,6 +129,19 @@ public class Application {
 				+ ", guarenteeCover=" + guarenteeCover + ", marketValueOfGurarntee=" + marketValueOfGurarntee
 				+ ", status=" + status + ", dateOfInterview=" + dateOfInterview + "]";
 	}
+
+
+
 	
+
+
+
+	
+
+
+	
+
+
+		
 	
 }

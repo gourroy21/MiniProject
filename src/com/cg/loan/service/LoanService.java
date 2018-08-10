@@ -82,6 +82,7 @@ public class LoanService implements ILoanService{
 	}
 
 	@Override
+<<<<<<< HEAD
 	public boolean validateAdmin(Users user) throws LoanException {
 		
 		return dao.validateAdmin(user);
@@ -159,12 +160,49 @@ public class LoanService implements ILoanService{
 		if(!mProg.matches())
 		{
 			throw new LoanException("Enter a valid Program Name");
+=======
+	public boolean isValidApplication(Application app,Double min, Double max) throws LoanException {
+		Pattern income=Pattern.compile("^[1-9][0-9]+$");
+		Matcher mincome=income.matcher(Integer.toString(app.getAnnualFamilyIncome()));
+		if(!mincome.matches())
+		{
+			throw new LoanException("Enter valid Income: must only be digits");
+		}
+		else
+		{
+			if (app.getAmountOfLoan() < min)
+				throw new LoanException("Amount must be greater than "+min);
+			else if (app.getAmountOfLoan() > max)
+				throw new LoanException("Amount must be less than "+max);
+		}
+		
+		Pattern doc=Pattern.compile("^[a-zA-Z,]+$");
+		Matcher mdoc=doc.matcher(app.getDocumentsProofAvailable());
+		if(!mdoc.matches())
+		{
+			throw new LoanException("Documents must contain only alphabets");
+		}
+		
+		Pattern guarentee=Pattern.compile("^[a-zA-Z]+$");
+		Matcher mguarentee=guarentee.matcher(app.getGuarenteeCover());
+		if(!mguarentee.matches())
+		{
+			throw new LoanException("Guarentee Cover must contain only alphabets");
+		}
+		
+		Pattern value=Pattern.compile("^[1-9][0-9]+$");
+		Matcher mvalue=value.matcher(app.getMarketValueOfGurarntee());
+		if(!mvalue.matches())
+		{
+			throw new LoanException("Enter valid Market Value: must only be digits");
+>>>>>>> application
 		}
 		
 		return true;
 	}
 
 	@Override
+<<<<<<< HEAD
 	public Boolean updateLoan(LoanProgramBean loan) throws LoanException {
 		
 		return dao.updateLoan(loan);
@@ -188,6 +226,11 @@ public class LoanService implements ILoanService{
 	public Application updateStatus(int id,String status) {
 		// TODO Auto-generated method stub
 		return dao.updateStatus(id,status);
+=======
+	public int addClientDetails(Application app) throws LoanException {
+		
+		return dao.addClientDetails(app);
+>>>>>>> application
 	}
 
 }
