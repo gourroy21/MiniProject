@@ -162,6 +162,7 @@ public class LoanService implements ILoanService{
 			throw new LoanException("Enter a valid Program Name");
 =======
 	public boolean isValidApplication(Application app,Double min, Double max) throws LoanException {
+		
 		Pattern income=Pattern.compile("^[1-9][0-9]+$");
 		Matcher mincome=income.matcher(Integer.toString(app.getAnnualFamilyIncome()));
 		if(!mincome.matches())
